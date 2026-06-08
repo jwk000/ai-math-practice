@@ -1,0 +1,26 @@
+# macOS
+.DS_Store
+
+# Editor and local environment
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Node / web build output
+node_modules/
+dist/
+build/
+
+# Android / Gradle build output
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+*.apk
+*.ap_
+*.aab
+*.dex
+
+# Logs
+*.log
