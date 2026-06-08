@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>算式找茬</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="topbar" aria-label="游戏状态">
+        <div>
+          <p class="eyebrow">四则运算找茬</p>
+          <h1>找出那个算错的算式</h1>
+        </div>
+        <div class="timer" aria-label="本题剩余时间" aria-live="polite">
+          <div class="clock-face">
+            <span class="clock-mark mark-12"></span>
+            <span class="clock-mark mark-3"></span>
+            <span class="clock-mark mark-6"></span>
+            <span class="clock-mark mark-9"></span>
+            <span id="clockHand" class="clock-hand"></span>
+            <span class="clock-center"></span>
+          </div>
+          <div class="timer-text">
+            <span id="timeLeft">20</span>
+            <small>秒</small>
+          </div>
+        </div>
+      </section>
+
+      <nav class="page-tabs" aria-label="练习入口">
+        <button id="gameTabButton" class="tab-button active" type="button">随机找茬</button>
+        <button id="practiceTabButton" class="tab-button" type="button">专项练习</button>
+      </nav>
+
+      <section id="gamePage">
+        <section class="score-panel" aria-label="得分">
+          <div>
+            <span class="label">答对</span>
+            <strong id="score">0</strong>
+          </div>
+          <div>
+            <span class="label" id="roundLabel">本题</span>
+            <strong id="round">1</strong>
+          </div>
+          <div>
+            <span class="label">模式</span>
+            <strong id="modeName">随机</strong>
+          </div>
+          <button id="newGameButton" type="button">重新开始</button>
+        </section>
+
+        <section class="question-panel" aria-live="polite">
+          <div class="prompt-row">
+            <p id="prompt">请选择错误的算式</p>
+            <span id="difficultyTag">基础练习</span>
+          </div>
+          <div id="choices" class="choices" aria-label="算式选项"></div>
+        </section>
+
+        <section id="feedback" class="feedback hidden" aria-live="assertive"></section>
+      </section>
+
+      <section id="practicePage" class="practice-page hidden" aria-label="专项练习">
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">专项练习</p>
+            <h2>选择一种易错类型</h2>
+          </div>
+          <span>每组 10 题</span>
+        </div>
+        <div id="practiceCatalog" class="practice-catalog"></div>
+      </section>
+
+      <section class="mistake-book" aria-label="错题集">
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">错题集</p>
+            <h2>按错误原因练一练</h2>
+          </div>
+          <span id="mistakeCount">0 题</span>
+        </div>
+        <div id="mistakeGroups" class="mistake-groups"></div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
